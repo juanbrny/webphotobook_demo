@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1  class="photo_title">{% block title %} Edit "{{ photo['title'] }}" {% endblock %}</h1>
+{% if photo.url is defined or  request.form.url is defined %}
+<div class="image">
+  <img class="f_image" src="/{{ images_location }}{{  request.form['url'] or photo['url'] }}" alt="{{ photo['title'] }}"/>
+</div>
+{% endif %}
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label  class="photo_title" for="title">Title</label>
+        <input type="text" name="title" placeholder="Title"
+               class="form-control photo_title form_noform"
+               value="{{ request.form['title'] or photo['title'] }}">
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea name="description" placeholder="Description"
+                  class="form-control form_noform">{{ request.form['description'] or photo['description'] }}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="image">Image</label>
+        <input type="file" name="image" accept="image/*">
+
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+<hr>
+<form action="{{ url_for('delete', id=photo['id']) }}" method="POST">
+    <input type="submit" value="Delete photo"
+            class="btn btn-danger btn-sm"
+            onclick="return confirm('Are you sure you want to delete this photo?')">
+</form>
+{% endblock %}

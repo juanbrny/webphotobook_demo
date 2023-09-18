@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 class="photo_title">{% block title %} {{ photo['title'] }} {% endblock %}</h2>
+    <span class="badge badge-primary">{{ photo['created'] }}</span>
+    <p>{{ photo['description'] }}</p>
+    {% if photo.url is defined %}
+    <div class="image">
+      <img class="f_image" src="/{{ images_location }}{{  photo['url'] }}" alt="{{ photo['title'] }}"/>
+    </div>
+    <span class="creation_date">{{ photo['created'] }}</span>
+    <a href="{{ url_for('edit', id=photo['id']) }}">
+      <span class="p_edit">Edit</span>
+    </a>
+    {% endif %}
+{% endblock %}

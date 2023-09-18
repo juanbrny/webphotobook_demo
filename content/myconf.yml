@@ -1,0 +1,18 @@
+ADMIN_USER: admin
+ALLOWED_EXTENSIONS:
+- apng
+- avif
+- gif
+- jpg
+- png
+- svg
+- webp
+APP_NAME: My App
+BASIC_AUTH_PASSWORD: admin123
+BASIC_AUTH_USERNAME: admin
+DBNAME: photos
+DB_FILE: database.db
+DB_TABLE_NAME: photos
+IMAGES_LOCATION: images/
+MAX_CONTENT_LENGTH: 104857600
+SECRET_KEY: abcde_changeme312312312

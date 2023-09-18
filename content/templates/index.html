@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} {{ app_name  }} {% endblock %}</h1>
+    {% for photo in photos %}
+    	<a href="{{ url_for('photo', photo_id=photo['id']) }}">
+    	  <div class="index_text">
+    	    <h2 class="photo_title">{{ photo['title'] }}</h2>
+      	  <p class="photo_description">{{ photo['description'] }}</p>
+    	  </div>
+    	{% if photo.url is defined %}
+    	  <div class="image index_image">
+    	    <img src="{{ images_location }}{{ photo['url'] }}" alt="{{ photo['title'] }}" height="200"/>
+    	  </div>
+    	{% endif %}
+    	</a>
+    	<span class="creation_date">{{ photo['created'] }}</span>
+    	<a href="{{ url_for('edit', id=photo['id']) }}">
+        <span class="p_edit">Edit</span>
+      </a>
+    	<hr/>
+	 {% endfor %}
+{% endblock %}

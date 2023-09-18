@@ -1,0 +1,63 @@
+
+
+img {
+  border: 1px black solid;
+  width: auto;
+  margin: 2px;
+
+}
+
+.myimagecreate {
+   margin: 20px 0px;
+}
+.myimagecreate.label {
+ border: 2px black solid;
+}
+
+img.f_image {
+  width: 100%;
+  height: auto;
+}
+.creation_dat {
+   font-weight: bolder;
+   font-size: 1.5pt;
+}
+
+.p_edit {
+  background-color: darkolivegreen;
+  color: white;
+  padding: 1px 4px;
+  margin: 2px; 
+  font
+}
+
+.photo_title {
+   font-family: 'JelleeBold';
+   font-weight: normal;
+   font-style: normal; 
+}
+
+.form_noform {
+    border: 0px;
+    margin: 6px;
+    background-color: whitesmoke;
+}
+
+label {
+   font-weight: bold;
+}
+h1 {
+    color: darkgreen;
+    text-align: center;
+}
+
+div.index_image {
+ left: 0;
+}
+
+div.index_text {
+  right: 0;
+}
+
+
+
