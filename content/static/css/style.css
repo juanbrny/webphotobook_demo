@@ -27,8 +27,8 @@ img.f_image {
   background-color: darkolivegreen;
   color: white;
   padding: 1px 4px;
-  margin: 2px; 
-  font
+  margin: 15%;
+  
 }
 
 .photo_title {
@@ -52,11 +52,21 @@ h1 {
 }
 
 div.index_image {
- left: 0;
+ right: 0;
+ position: relative;
+ display: inline-block;
+ margin: 10px;
 }
 
 div.index_text {
-  right: 0;
+  left: 0;
+  top: 0;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0px 50px;
+  width: 50%;
+  
 }
 
 
