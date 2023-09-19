@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: myapp
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webphotobook
+  namespace: myapp
+  labels:
+    app: webphotobook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webphotobook
+  template:
+    metadata:
+      labels:
+        app: webphotobook
+    spec:
+      containers:
+      - name: webphotobook
+        image: rmahiquesuse/webphotobook_demo:latest
+        ports:
+        - containerPort: 5000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: webphotobook
+  namespace: myapp
+spec:
+  type: LoadBalancer
+  selector:
+    app: webphotobook
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      name: webphotobook-5000-tcp
